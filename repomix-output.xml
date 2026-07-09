@@ -1,0 +1,1048 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+static/
+  style.css
+templates/
+  login.html
+  tasks.html
+app.py
+README.md
+requirements.txt
+schema.sql
+task_management.db
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="static/style.css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#eef3f8;
+    color:#333;
+}
+
+.login-page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    padding:30px;
+}
+
+.login-container{
+    width:100%;
+    max-width:1100px;
+    display:flex;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.2);
+}
+
+.login-left{
+    flex:1;
+    background:#1e3a8a;
+    color:white;
+    padding:60px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.login-left h1{
+    font-size:38px;
+    margin-bottom:20px;
+}
+
+.login-left p{
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.login-left ul{
+    list-style:none;
+}
+
+.login-left li{
+    margin:15px 0;
+    font-size:17px;
+}
+
+.login-card{
+    width:420px;
+    padding:50px;
+    background:white;
+}
+
+.logo{
+    width:80px;
+    height:80px;
+    background:#2563eb;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:34px;
+    margin:auto;
+    margin-bottom:25px;
+}
+
+.login-card h2{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#777;
+    margin-bottom:30px;
+}
+
+.input-group{
+    margin-bottom:20px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.input-group input{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    outline:none;
+    transition:.3s;
+}
+
+.input-group input:focus{
+    border-color:#2563eb;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.error-box{
+    background:#fee2e2;
+    color:#b91c1c;
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+.footer{
+    text-align:center;
+    margin-top:25px;
+    color:#888;
+    font-size:14px;
+}
+
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+.sidebar{
+    width:240px;
+    background:#1e3a8a;
+    color:white;
+    padding:35px 25px;
+}
+
+.sidebar h2{
+    margin-bottom:40px;
+    text-align:center;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    padding:14px;
+    border-radius:8px;
+    margin-bottom:10px;
+    cursor:pointer;
+}
+
+.sidebar li:hover,
+.sidebar .active{
+    background:rgba(255,255,255,.15);
+}
+
+.logout-btn{
+    display:block;
+    margin-top:40px;
+    text-align:center;
+    padding:12px;
+    background:#ef4444;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+.main-content{
+    flex:1;
+    padding:35px;
+}
+
+.header{
+    margin-bottom:30px;
+}
+
+.header h1{
+    color:#1e3a8a;
+    margin-bottom:8px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.card h2{
+    margin-bottom:20px;
+}
+
+.task-form{
+    display:grid;
+    grid-template-columns:2fr 2fr 1fr;
+    gap:15px;
+}
+
+.task-form input,
+.task-form select{
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    outline:none;
+}
+
+.task-form input:focus,
+.task-form select:focus{
+    border-color:#2563eb;
+}
+
+.task-form button{
+    width:100%;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#2563eb;
+    color:white;
+}
+
+th{
+    padding:15px;
+    text-align:left;
+}
+
+td{
+    padding:14px;
+    border-bottom:1px solid #eee;
+}
+
+tbody tr:hover{
+    background:#f5f8ff;
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 14px;
+    border-radius:30px;
+    color:white;
+    font-size:13px;
+    font-weight:600;
+}
+
+.done{
+    background:#22c55e;
+}
+
+.pending{
+    background:#f59e0b;
+}
+
+.action-btn{
+    text-decoration:none;
+    color:white;
+    padding:8px 14px;
+    border-radius:6px;
+    font-size:13px;
+    margin-right:8px;
+}
+
+.edit{
+    background:#2563eb;
+}
+
+.delete{
+    background:#ef4444;
+}
+
+.action-btn:hover{
+    opacity:.9;
+}
+
+.empty{
+    text-align:center;
+    padding:25px;
+    color:#777;
+}
+
+@media(max-width:900px){
+
+.login-container{
+    flex-direction:column;
+}
+
+.login-left{
+    display:none;
+}
+
+.login-card{
+    width:100%;
+}
+
+.dashboard{
+    flex-direction:column;
+}
+
+.sidebar{
+    width:100%;
+}
+
+.task-form{
+    grid-template-columns:1fr;
+}
+
+table{
+    font-size:14px;
+}
+}
+</file>
+
+<file path="templates/login.html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System | Login</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="login-page">
+
+    <div class="login-container">
+
+        <div class="login-left">
+            <h1>Task Management System</h1>
+            <p>
+                Manage employee tasks efficiently with a simple,
+                organized and secure dashboard.
+            </p>
+
+            <ul>
+                <li>✔ Employee Task Tracking</li>
+                <li>✔ Status Management</li>
+                <li>✔ Secure Login</li>
+                <li>✔ Database Connectivity</li>
+            </ul>
+        </div>
+
+        <div class="login-card">
+
+            <div class="logo">
+                📋
+            </div>
+
+            <h2>Welcome Back</h2>
+            <p class="subtitle">
+                Sign in to continue
+            </p>
+
+            {% if error %}
+            <div class="error-box">
+                {{ error }}
+            </div>
+            {% endif %}
+
+            <form method="POST" action="{{ url_for('login') }}">
+
+                <div class="input-group">
+                    <label>Username</label>
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Enter Username"
+                        required>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Enter Password"
+                        required>
+                </div>
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <div class="footer">
+                AI & ML Internship Project
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+</file>
+
+<file path="templates/tasks.html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>📋 Task Manager</h2>
+
+        <ul>
+            <li class="active">Dashboard</li>
+            <li>Tasks</li>
+            <li>Employees</li>
+        </ul>
+
+        <a class="logout-btn" href="{{ url_for('logout') }}">
+            Logout
+        </a>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <div class="header">
+
+            <div>
+                <h1>Task Management Dashboard</h1>
+                <p>Welcome, <strong>{{ username }}</strong></p>
+            </div>
+
+        </div>
+
+
+        <!-- Add Task Card -->
+
+        <div class="card">
+
+            <h2>Add New Task</h2>
+
+            <form method="POST" action="{{ url_for('tasks') }}" class="task-form">
+
+                <input
+                    type="text"
+                    name="employee_name"
+                    placeholder="Employee Name"
+                    required>
+
+                <select name="title_id" required>
+
+                    <option value="" disabled selected>Select Task</option>
+
+                    {% for title in task_titles %}
+                    <option value="{{ title.title_id }}">
+                        {{ title.title_name }}
+                    </option>
+                    {% endfor %}
+
+                </select>
+
+                <button type="submit">
+                    Add Task
+                </button>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- Task Table -->
+
+        <div class="card">
+
+            <h2>Task List</h2>
+
+            <table>
+
+                <thead>
+
+                <tr>
+                    <th>Task ID</th>
+                    <th>Employee</th>
+                    <th>Task</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                {% for task in tasks %}
+
+                <tr>
+
+                    <td>{{ task.task_id }}</td>
+
+                    <td>{{ task.employee_name }}</td>
+
+                    <td>{{ task.title_name }}</td>
+
+                    <td>
+
+                        {% if task.completed %}
+                            <span class="badge done">
+                                Completed
+                            </span>
+                        {% else %}
+                            <span class="badge pending">
+                                Pending
+                            </span>
+                        {% endif %}
+
+                    </td>
+
+                    <td>
+
+                        <a
+                        class="action-btn edit"
+                        href="{{ url_for('toggle', task_id=task.task_id) }}">
+                            Toggle
+                        </a>
+
+                        <a
+                        class="action-btn delete"
+                        href="{{ url_for('delete', task_id=task.task_id) }}">
+                            Delete
+                        </a>
+
+                    </td>
+
+                </tr>
+
+                {% else %}
+
+                <tr>
+
+                    <td colspan="5" class="empty">
+                        No Tasks Available
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
+</file>
+
+<file path="app.py">
+from flask import Flask, render_template, request, redirect, url_for, session
+import sqlite3
+
+app = Flask(__name__)
+app.secret_key = "change_this_to_a_random_secret_key"
+
+DATABASE = "task_management.db"
+
+
+def get_db_connection():
+    conn = sqlite3.connect(DATABASE)
+    conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA foreign_keys = ON")
+    return conn
+
+
+def init_db():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.executescript("""
+    CREATE TABLE IF NOT EXISTS login(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT UNIQUE NOT NULL,
+        password TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS task_titles(
+        title_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title_name TEXT UNIQUE NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS tasks(
+        task_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        employee_name TEXT NOT NULL,
+        title_id INTEGER NOT NULL,
+        completed INTEGER DEFAULT 0,
+        FOREIGN KEY(title_id) REFERENCES task_titles(title_id)
+    );
+    """)
+
+    cursor.execute("SELECT COUNT(*) FROM login")
+    if cursor.fetchone()[0] == 0:
+        cursor.executemany(
+            "INSERT INTO login(username,password) VALUES(?,?)",
+            [
+                ("admin", "admin123"),
+                ("employee1", "pass123")
+            ]
+        )
+
+    cursor.execute("SELECT COUNT(*) FROM task_titles")
+    if cursor.fetchone()[0] == 0:
+        cursor.executemany(
+            "INSERT INTO task_titles(title_name) VALUES(?)",
+            [
+                ("Design UI",),
+                ("Backend Development",),
+                ("Database Setup",),
+                ("Testing",),
+                ("Deployment",),
+                ("Documentation",)
+            ]
+        )
+
+    conn.commit()
+    conn.close()
+
+
+@app.route("/")
+def index():
+    if "username" in session:
+        return redirect(url_for("tasks"))
+    return redirect(url_for("login"))
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    error = None
+
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        cursor.execute(
+            "SELECT * FROM login WHERE username=? AND password=?",
+            (username, password)
+        )
+
+        user = cursor.fetchone()
+
+        cursor.close()
+        conn.close()
+
+        if user:
+            session["username"] = username
+            return redirect(url_for("tasks"))
+        else:
+            error = "Invalid username or password"
+
+    return render_template("login.html", error=error)
+
+
+@app.route("/logout")
+def logout():
+    session.pop("username", None)
+    return redirect(url_for("login"))
+
+
+@app.route("/tasks", methods=["GET", "POST"])
+def tasks():
+
+    if "username" not in session:
+        return redirect(url_for("login"))
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    if request.method == "POST":
+        employee_name = request.form["employee_name"]
+        title_id = request.form["title_id"]
+
+        cursor.execute(
+            """
+            INSERT INTO tasks(employee_name,title_id,completed)
+            VALUES(?,?,?)
+            """,
+            (employee_name, title_id, 0)
+        )
+
+        conn.commit()
+
+    cursor.execute("""
+        SELECT title_id,title_name
+        FROM task_titles
+        ORDER BY title_name
+    """)
+
+    task_titles = cursor.fetchall()
+
+    cursor.execute("""
+        SELECT
+            t.task_id,
+            t.employee_name,
+            tt.title_name,
+            t.completed
+        FROM tasks t
+        JOIN task_titles tt
+            ON t.title_id = tt.title_id
+        ORDER BY t.task_id DESC
+    """)
+
+    all_tasks = cursor.fetchall()
+
+    cursor.close()
+    conn.close()
+
+    return render_template(
+        "tasks.html",
+        tasks=all_tasks,
+        task_titles=task_titles,
+        username=session["username"]
+    )
+
+
+@app.route("/toggle/<int:task_id>")
+def toggle(task_id):
+
+    if "username" not in session:
+        return redirect(url_for("login"))
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        UPDATE tasks
+        SET completed =
+            CASE
+                WHEN completed=0 THEN 1
+                ELSE 0
+            END
+        WHERE task_id=?
+    """, (task_id,))
+
+    conn.commit()
+
+    cursor.close()
+    conn.close()
+
+    return redirect(url_for("tasks"))
+
+
+@app.route("/delete/<int:task_id>")
+def delete(task_id):
+
+    if "username" not in session:
+        return redirect(url_for("login"))
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute(
+        "DELETE FROM tasks WHERE task_id=?",
+        (task_id,)
+    )
+
+    conn.commit()
+
+    cursor.close()
+    conn.close()
+
+    return redirect(url_for("tasks"))
+
+
+if __name__ == "__main__":
+    init_db()
+    app.run(debug=True)
+</file>
+
+<file path="README.md">
+# Task Management System (Flask + MySQL)
+
+A simple Task Management System with Login, built with Python (Flask) and MySQL.
+
+## Features
+- Login using stored credentials (`login` table)
+- Add tasks, assign to employees
+- Mark tasks Completed / Pending
+- **Bonus:** Task titles stored in a separate `task_titles` table, selected via dropdown,
+  linked to `tasks` via Foreign Key, and fetched using SQL `JOIN`
+
+## File Structure
+```
+task_management/
+├── app.py                # Flask backend (routes, DB logic)
+├── requirements.txt      # Python dependencies
+├── schema.sql            # MySQL database + tables + sample data
+├── templates/
+│   ├── login.html        # Login page
+│   └── tasks.html        # Task management page
+├── static/
+│   └── style.css         # Styling
+└── README.md
+```
+
+## 1. Prerequisites
+- Python 3.9+
+- MySQL Server installed and running
+
+## 2. Setup Steps (run these in order)
+
+### a) Create the project folder and files
+If you're pasting these files manually, create this exact structure on your machine:
+```bash
+mkdir task_management
+cd task_management
+mkdir templates static
+```
+Then paste `app.py`, `requirements.txt`, `schema.sql`, `README.md` into `task_management/`,
+`login.html` and `tasks.html` into `task_management/templates/`,
+and `style.css` into `task_management/static/`.
+
+### b) Create a virtual environment (recommended)
+```bash
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
+```
+
+### c) Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### d) Create the database and tables
+Log into MySQL and run the schema file:
+```bash
+mysql -u root -p < schema.sql
+```
+(Enter your MySQL root password when prompted. This creates the database
+`task_management_db` with the `login`, `task_titles`, and `tasks` tables,
+plus sample data.)
+
+### e) Update DB credentials in `app.py`
+Open `app.py` and edit this block with your actual MySQL password:
+```python
+db_config = {
+    'host': 'localhost',
+    'user': 'root',
+    'password': 'YOUR_MYSQL_PASSWORD',
+    'database': 'task_management_db'
+}
+```
+
+### f) Run the app
+```bash
+python app.py
+```
+Visit: **http://127.0.0.1:5000/**
+
+### g) Login with sample credentials
+- Username: `admin`
+- Password: `admin123`
+
+## 3. Submitting to GitHub
+```bash
+cd task_management
+git init
+git add .
+git commit -m "Task Management System - Login + MySQL + Flask"
+git branch -M main
+git remote add origin https://github.com/<your-username>/<your-repo-name>.git
+git push -u origin main
+```
+Then submit the GitHub repo link, as your assignment prefers.
+
+**Important:** Before pushing, remove your real MySQL password from `app.py`
+(keep the placeholder `YOUR_MYSQL_PASSWORD`) so you don't commit real credentials.
+
+## 4. Optional: Free Deployment (so a teacher can open a live link)
+Since this needs a real MySQL database, the simplest free option is **PythonAnywhere**:
+1. Create a free account at https://www.pythonanywhere.com
+2. Upload your project files (or `git clone` your repo) via their Bash console
+3. Create a MySQL database from the "Databases" tab (they give you a free MySQL instance)
+4. Update `db_config` in `app.py` with the host/user/password PythonAnywhere gives you
+5. Import `schema.sql` into that database using their MySQL console
+6. Set up a new web app (Flask), point it to `app.py`, and reload
+
+This step is optional — a GitHub repo + these files (which run locally) already satisfy
+the submission requirement, since your teacher wants to be able to run the project.
+</file>
+
+<file path="requirements.txt">
+Flask==3.0.3
+mysql-connector-python==8.4.0
+</file>
+
+<file path="schema.sql">
+-- Task Management System - Database Schema
+
+CREATE DATABASE IF NOT EXISTS task_management_db;
+USE task_management_db;
+
+-- 1) LOGIN TABLE
+CREATE TABLE IF NOT EXISTS login (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL
+);
+
+-- Sample credentials (change/add your own)
+INSERT INTO login (username, password) VALUES
+    ('admin', 'admin123'),
+    ('employee1', 'pass123');
+
+-- 2) TASK TITLES TABLE (Bonus: separate lookup table for dropdown)
+CREATE TABLE IF NOT EXISTS task_titles (
+    title_id INT AUTO_INCREMENT PRIMARY KEY,
+    title_name VARCHAR(100) NOT NULL UNIQUE
+);
+
+INSERT INTO task_titles (title_name) VALUES
+    ('Design UI'),
+    ('Backend Development'),
+    ('Database Setup'),
+    ('Testing'),
+    ('Deployment'),
+    ('Documentation');
+
+-- 3) TASK MANAGEMENT TABLE
+-- Task ID (Auto Increment PK), Employee Name, Task Title (via FK), Completed
+CREATE TABLE IF NOT EXISTS tasks (
+    task_id INT AUTO_INCREMENT PRIMARY KEY,
+    employee_name VARCHAR(100) NOT NULL,
+    title_id INT NOT NULL,
+    completed BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (title_id) REFERENCES task_titles(title_id)
+);
+
+-- Sample tasks (optional, remove if not needed)
+INSERT INTO tasks (employee_name, title_id, completed) VALUES
+    ('Rahul Sharma', 1, FALSE),
+    ('Priya Verma', 2, TRUE);
+</file>
+
+</files>

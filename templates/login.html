@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System | Login</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="login-page">
+
+    <div class="login-container">
+
+        <div class="login-left">
+            <h1>Task Management System</h1>
+            <p>
+                Manage employee tasks efficiently with a simple,
+                organized and secure dashboard.
+            </p>
+
+            <ul>
+                <li>✔ Employee Task Tracking</li>
+                <li>✔ Status Management</li>
+                <li>✔ Secure Login</li>
+                <li>✔ Database Connectivity</li>
+            </ul>
+        </div>
+
+        <div class="login-card">
+
+            <div class="logo">
+                📋
+            </div>
+
+            <h2>Welcome Back</h2>
+            <p class="subtitle">
+                Sign in to continue
+            </p>
+
+            {% if error %}
+            <div class="error-box">
+                {{ error }}
+            </div>
+            {% endif %}
+
+            <form method="POST" action="{{ url_for('login') }}">
+
+                <div class="input-group">
+                    <label>Username</label>
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Enter Username"
+                        required>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Enter Password"
+                        required>
+                </div>
+
+                <button type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <div class="footer">
+                AI & ML Internship Project
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

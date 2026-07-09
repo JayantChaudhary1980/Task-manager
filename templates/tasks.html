@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>📋 Task Manager</h2>
+
+        <ul>
+            <li class="active">Dashboard</li>
+            <li>Tasks</li>
+            <li>Employees</li>
+        </ul>
+
+        <a class="logout-btn" href="{{ url_for('logout') }}">
+            Logout
+        </a>
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <div class="header">
+
+            <div>
+                <h1>Task Management Dashboard</h1>
+                <p>Welcome, <strong>{{ username }}</strong></p>
+            </div>
+
+        </div>
+
+
+        <!-- Add Task Card -->
+
+        <div class="card">
+
+            <h2>Add New Task</h2>
+
+            <form method="POST" action="{{ url_for('tasks') }}" class="task-form">
+
+                <input
+                    type="text"
+                    name="employee_name"
+                    placeholder="Employee Name"
+                    required>
+
+                <select name="title_id" required>
+
+                    <option value="" disabled selected>Select Task</option>
+
+                    {% for title in task_titles %}
+                    <option value="{{ title.title_id }}">
+                        {{ title.title_name }}
+                    </option>
+                    {% endfor %}
+
+                </select>
+
+                <button type="submit">
+                    Add Task
+                </button>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- Task Table -->
+
+        <div class="card">
+
+            <h2>Task List</h2>
+
+            <table>
+
+                <thead>
+
+                <tr>
+                    <th>Task ID</th>
+                    <th>Employee</th>
+                    <th>Task</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                {% for task in tasks %}
+
+                <tr>
+
+                    <td>{{ task.task_id }}</td>
+
+                    <td>{{ task.employee_name }}</td>
+
+                    <td>{{ task.title_name }}</td>
+
+                    <td>
+
+                        {% if task.completed %}
+                            <span class="badge done">
+                                Completed
+                            </span>
+                        {% else %}
+                            <span class="badge pending">
+                                Pending
+                            </span>
+                        {% endif %}
+
+                    </td>
+
+                    <td>
+
+                        <a
+                        class="action-btn edit"
+                        href="{{ url_for('toggle', task_id=task.task_id) }}">
+                            Toggle
+                        </a>
+
+                        <a
+                        class="action-btn delete"
+                        href="{{ url_for('delete', task_id=task.task_id) }}">
+                            Delete
+                        </a>
+
+                    </td>
+
+                </tr>
+
+                {% else %}
+
+                <tr>
+
+                    <td colspan="5" class="empty">
+                        No Tasks Available
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
